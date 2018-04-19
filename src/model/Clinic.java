@@ -41,7 +41,7 @@ public class Clinic {
 
 	public void setName(int clinicID, String clinicName) {
 		this.clinicName = clinicName;
-		dao.changeName(clinicID, clinicName);
+		dao.setName(clinicID, clinicName);
 	}
 
 	public String getAddress() {

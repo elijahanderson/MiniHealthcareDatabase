@@ -150,7 +150,7 @@ public class ClinicDAO {
 	 * @param cname
 	 */
 
-	public void changeName(int cid, String cname) {
+	public void setName(int cid, String cname) {
 		try {
 			String cmd = "update CLINIC set clinicName = ? where clinicID = ?";
 			PreparedStatement pstmt = conn.prepareStatement(cmd);
