@@ -65,6 +65,11 @@ public class Doctor {
         return phone;
     }
 
+    public void setPhoneNum(String phone) {
+		this.phone = phone;
+		dao.changePhoneNum(mln, phone);
+	}
+
 	public String getEmail() {
         return email;
     }

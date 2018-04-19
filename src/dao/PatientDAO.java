@@ -250,6 +250,43 @@ public class PatientDAO {
 		}
 	}
 
+	/**
+	 *	Patient phone number was changed in the model object, so propagate the change to the database.
+	 *
+	 * @param ssn
+	 * @param phone
+	 */
+	public void changePhoneNum(int ssn, String phone) {
+		try {
+			String cmd = "update PATIENT set phone = ? where ssn = ?";
+			PreparedStatement pstmt = conn.prepareStatement(cmd);
+			pstmt.setString(1, phone);
+			pstmt.setInt(2, ssn);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			dbm.cleanup();
+			throw new RuntimeException("error changing patient's phone number", e);
+		}
+	}
+
+	/**
+	 *	Patient birth date was changed in the model object, so propagate the change to the database.
+	 *
+	 * @param ssn
+	 * @param bDate
+	 */
+	public void changeBirthDate(int ssn, String bDate) {
+		try {
+			String cmd = "update PATIENT set birthDate = ? where ssn = ?";
+			PreparedStatement pstmt = conn.prepareStatement(cmd);
+			pstmt.setString(1, bDate);
+			pstmt.setInt(2, ssn);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			dbm.cleanup();
+			throw new RuntimeException("error changing patient's birth date", e);
+		}
+	}
 
 	/**
 	 * Clear all data from the Patient table.

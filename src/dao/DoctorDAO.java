@@ -245,6 +245,26 @@ public class DoctorDAO {
 	}
 
 	/**
+	 *	Doctor's phone number was changed in the model object, so propagate the change to the database.
+	 *
+	 * @param mln
+	 * @param phone
+	 */
+	public void changePhoneNum(int mln, String phone) {
+		try {
+			String cmd = "update DOCTOR set phone = ? where mln = ?";
+			PreparedStatement pstmt = conn.prepareStatement(cmd);
+			pstmt.setString(1, phone);
+			pstmt.setInt(2, mln);
+			pstmt.executeUpdate();
+		} catch (SQLException e) {
+			dbm.cleanup();
+			throw new RuntimeException("error changing doctor's phone number", e);
+		}
+
+	}
+
+	/**
 	 * Retrieve a Collection of all patients in the given clinic.
 	 *
 	 * @param mln

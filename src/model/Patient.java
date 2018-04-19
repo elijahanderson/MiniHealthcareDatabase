@@ -73,7 +73,17 @@ public class Patient {
         return phone;
     }
 
+    public void setPhoneNum(String phone) {
+		this.phone = phone;
+		dao.changePhoneNum(ssn, phone);
+	}
+
     public String getBirthDate() {
         return birthDate;
     }
+
+    public void setBirthDate(String bDate) {
+		this.birthDate = bDate;
+		dao.changeBirthDate(ssn, birthDate);
+	}
 }
