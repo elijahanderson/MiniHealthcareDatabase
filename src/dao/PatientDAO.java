@@ -201,7 +201,7 @@ public class PatientDAO {
 	*/
 	public void changeClinic(int ssn, Clinic clinic) {
 		try {
-			String cmd = "update PATIENT set clinicID = ? where ssn = ?";
+			String cmd = "update PATIENT set pCID = ? where ssn = ?";
 			PreparedStatement pstmt = conn.prepareStatement(cmd);
 			pstmt.setInt(1, clinic.getID());
 			pstmt.setInt(2, ssn);
@@ -220,7 +220,7 @@ public class PatientDAO {
 	 */
 	public void changeDoctor(int ssn, Doctor doctor) {
 		try {
-			String cmd = "update DOCTOR set mln = ? where ssn = ?";
+			String cmd = "update PATIENT set pDID = ? where ssn = ?";
 			PreparedStatement pstmt = conn.prepareStatement(cmd);
 			pstmt.setInt(1, doctor.getMLN());
 			pstmt.setInt(2, ssn);

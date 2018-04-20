@@ -39,13 +39,17 @@ public class Clinic {
         return clinicID;
     }
 
-	public void setName(int clinicID, String clinicName) {
-		this.clinicName = clinicName;
+	public void setName(String cname) {
+		this.clinicName = cname;
 		dao.setName(clinicID, clinicName);
 	}
 
 	public String getAddress() {
 		return address;
+	}
+
+	public Collection<String> getClinicNames() {
+		return dao.getClinicNames();
 	}
 
 	public String getPhoneNum() {

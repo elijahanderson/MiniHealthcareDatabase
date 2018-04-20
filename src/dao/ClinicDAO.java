@@ -212,6 +212,23 @@ public class ClinicDAO {
 			throw new RuntimeException("error getting clinic's doctors", e);
 		}
 	}
+
+	public Collection<String> getClinicNames() {
+		try {
+			Collection<String> names = new ArrayList<>();
+			String qry = "select clinicName from CLINIC";
+			PreparedStatement pstmt = conn.prepareStatement(qry);
+			ResultSet rs = pstmt.executeQuery();
+			while (rs.next()) {
+				String name = rs.getString("clinicName");
+				names.add(name);
+			}
+			rs.close();
+			return names;
+		} catch (SQLException e) {
+			throw new RuntimeException("error getting names of clinics");
+		}
+	}
 	/**
 	 * Clear all data from the Clinic table.
 	 *

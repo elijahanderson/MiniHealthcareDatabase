@@ -213,7 +213,7 @@ public class DoctorDAO {
 	*/
 	public void changeClinic(int mln, Clinic clinic) {
 		try {
-			String cmd = "update DOCTOR set clinicID = ? where mln = ?";
+			String cmd = "update DOCTOR set dCID = ? where mln = ?";
 			PreparedStatement pstmt = conn.prepareStatement(cmd);
 			pstmt.setInt(1, clinic.getID());
 			pstmt.setInt(2, mln);

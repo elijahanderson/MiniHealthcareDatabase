@@ -1,11 +1,11 @@
 ----------------------------------------------------------------
-Thu Apr 19 10:37:22 EDT 2018:
-Booting Derby version The Apache Software Foundation - Apache Derby - 10.7.1.1 - (1040133): instance a816c00e-0162-de56-a1af-00000e434d08 
+Thu Apr 19 22:32:53 EDT 2018:
+Booting Derby version The Apache Software Foundation - Apache Derby - 10.7.1.1 - (1040133): instance a816c00e-0162-e0e5-b71b-00000e436420 
 on database directory D:\Programming\Java Programs\HealthcareDatabase\HealthcareDatabase  with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
 Loaded from file:/D:/Programming/Java%20Programs/HealthcareDatabase/derby.jar
 java.vendor=Oracle Corporation
 java.runtime.version=1.8.0_172-b11
 Database Class Loader started - derby.database.classpath=''
 ----------------------------------------------------------------
-Thu Apr 19 10:37:23 EDT 2018:
-Shutting down instance a816c00e-0162-de56-a1af-00000e434d08 on database directory D:\Programming\Java Programs\HealthcareDatabase\HealthcareDatabase with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 
+Thu Apr 19 22:32:54 EDT 2018:
+Shutting down instance a816c00e-0162-e0e5-b71b-00000e436420 on database directory D:\Programming\Java Programs\HealthcareDatabase\HealthcareDatabase with class loader sun.misc.Launcher$AppClassLoader@18b4aac2 

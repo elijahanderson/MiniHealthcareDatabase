@@ -28,10 +28,15 @@ public class Test2 {
             }
         }
 
-        // Quick Care was converted into an insane asylum
-        Clinic insaneAsylum = dbm.findClinicByName("Quick Care");
-        insaneAsylum.setName(insaneAsylum.getID(), "Trans-Allegheny Lunatic Asylum");
+        Clinic insaneAsylum = dbm.insertClinic(4619, "Trans-Allegheny Lunatic Asylum", "666 Scary St", "666-446-779");
+
+        // Delbert has contracted rabies and went insane. :(
+        Patient delbert = dbm.findPatientByName("Delbert Hillegas");
+        delbert.setClinic(insaneAsylum);
+
         Doctor romanikov = dbm.insertDoctor(11366, "Dmitri Romanikov", "Insanology", "555-987-1566", "defnotinsane@allegheny.org", insaneAsylum);
+        delbert.setDoctor(romanikov);
+
         dbm.insertPatient(333445555, "Hannibal Lecter", "skinwearer@gmail.com", "555-145-5434", "1950-02-14", insaneAsylum, romanikov);
         dbm.insertPatient(164222489, "Jack the Ripper", "knifeguy@yahoo.com", "555-666-1344", "1884-06-06", insaneAsylum, romanikov);
 
